@@ -3,3 +3,9 @@
   display: flex;
   justify-content: space-between;
 }
+.links {
+  margin-right: 4em;
+  border: solid black;
+  display: flex;
+  gap: 100px;
+}

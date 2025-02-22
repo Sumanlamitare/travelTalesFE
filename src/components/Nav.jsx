@@ -4,8 +4,10 @@ export default function Nav() {
   return (
     <div className="navBar">
       <img src="" alt="Logo" />
-      <h3>Favorites</h3>
-      <h3> Add </h3>
+      <div className="links">
+        <h5>Favorites</h5>
+        <h5> Add </h5>
+      </div>
     </div>
   );
 }
