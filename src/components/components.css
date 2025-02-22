@@ -1,11 +1,22 @@
 .navBar {
-  border: solid red;
+  /* border: solid red; */
   display: flex;
   justify-content: space-between;
+  height: 140px;
+  background-color: rgba(0, 151, 178, 255);
+  margin: 0;
 }
 .links {
-  margin-right: 4em;
-  border: solid black;
+  margin-right: 10em;
+  /* border: solid black; */
   display: flex;
   gap: 100px;
+  height: 80px;
+  align-self: center;
+}
+.logo img {
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  margin: 1em;
 }
