@@ -1,5 +1,6 @@
 import "./components.css";
 import logo from "../assets/logo.jpg";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -9,7 +10,9 @@ export default function Nav() {
       </div>
 
       <div className="links">
-        <h4>Favorites</h4>
+        <Link to="/favorites" style={{ textDecoration: "none" }}>
+          <h4>Favorites</h4>
+        </Link>
         <h4> Add </h4>
       </div>
     </div>
