@@ -70,11 +70,7 @@ input[type="checkbox"] {
   flex-direction: column;
   border-radius: 10px;
 }
-.logsList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 1rem; /* Space between the cards */
-}
+
 .actionBtns {
   display: flex;
   gap: 2px;

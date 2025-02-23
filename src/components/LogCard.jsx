@@ -28,10 +28,10 @@ export default function LogCard({ log, onDelete, onFavorite }) {
 
       {/* action buttons */}
       <div className="actionBtns">
-        <button id="delete" onClick={() => onDelete(id)}>
+        <button id="delete" onClick={() => onDelete(log_id)}>
           Delete
         </button>
-        <button id="favorite" onClick={() => onFavorite(id)}>
+        <button id="favorite" onClick={() => onFavorite(log_id)}>
           {isFavorite ? "Unfavorite" : "Favorite"}
         </button>
         <Link to={`/details/${log_id}`}>
