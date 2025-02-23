@@ -1,0 +1,25 @@
+.low {
+  color: red;
+}
+.medium {
+  color: yellow;
+}
+.high {
+  color: green;
+}
+.logDetail {
+  background-color: bisque;
+  border: solid;
+  border-radius: 10px;
+  margin-top: 1em;
+  width: 450px;
+  justify-self: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+.logDetail button {
+  margin-left: 13em;
+  height: 25px;
+  width: 50px;
+  border-radius: 10px;
+}
