@@ -62,3 +62,30 @@ input[type="checkbox"] {
   width: 80px;
   margin-left: 20em;
 }
+.logCard {
+  border: solid brown;
+  width: 450px;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.logsList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1rem; /* Space between the cards */
+}
+.actionBtns {
+  display: flex;
+  gap: 2px;
+  margin-left: 1em;
+}
+
+#delete,
+#details,
+#favorite,
+#edit {
+  height: 30px;
+  /* width: fit-content; */
+  margin: 1em;
+}
