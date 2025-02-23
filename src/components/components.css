@@ -1,22 +1,64 @@
 .navBar {
-  /* border: solid red; */
+  /* border: 3px solid rgba(0, 151, 178, 255); */
   display: flex;
   justify-content: space-between;
-  height: 140px;
+  height: 50px;
   background-color: rgba(0, 151, 178, 255);
-  margin: 0;
 }
 .links {
   margin-right: 10em;
   /* border: solid black; */
   display: flex;
   gap: 100px;
-  height: 80px;
+  /* height: 80px; */
   align-self: center;
 }
 .logo img {
-  height: 110px;
-  width: 110px;
-  border-radius: 50%;
+  height: 50px;
+  width: 80px;
+  /* border-radius: 50%; */
+}
+.formContainer {
+  border: solid red;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
   margin: 1em;
+  gap: 2px;
+  justify-self: center;
+}
+.addForm {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.addForm label {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 1em;
+}
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+.addForm textarea {
+  padding: 10px;
+  height: 120px;
+  margin-bottom: 1em;
+}
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
+}
+.addForm button {
+  height: 50px;
+  width: 80px;
+  margin-left: 20em;
 }
