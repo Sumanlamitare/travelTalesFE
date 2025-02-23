@@ -3,7 +3,7 @@ import "./components.css";
 
 export default function LogCard({ log, onDelete, onFavorite }) {
   const {
-    id,
+    log_id,
     location,
     country,
     date_visited,
@@ -12,12 +12,18 @@ export default function LogCard({ log, onDelete, onFavorite }) {
     additional_comment,
   } = log;
 
+  const formattedDate = date_visited
+    ? !isNaN(new Date(date_visited).getTime()) // Check if it's a valid date
+      ? new Date(date_visited).toISOString().split("T")[0]
+      : "Date not provided"
+    : "Date not available"; // Fallback message if no date is provided
+
   return (
     <div className="logCard">
       <h3>
         {location}, {country}
       </h3>
-      <p>Date Visited: {date_visited}</p>
+      <p>Date Visited: {formattedDate}</p>
       <p>Rating: {rating}/10</p>
 
       {/* action buttons */}
@@ -28,10 +34,10 @@ export default function LogCard({ log, onDelete, onFavorite }) {
         <button id="favorite" onClick={() => onFavorite(id)}>
           {isFavorite ? "Unfavorite" : "Favorite"}
         </button>
-        <Link to={`/details/${id}`}>
+        <Link to={`/details/${log_id}`}>
           <button id="details">Details</button>
         </Link>
-        <Link to={`/edit/${id}`}>
+        <Link to={`/edit/${log_id}`}>
           <button id="edit">Edit</button>
         </Link>
       </div>
