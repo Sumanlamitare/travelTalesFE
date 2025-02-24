@@ -23,8 +23,6 @@ export default function LogCard({ log, onDelete, onFavorite }) {
       <h3>
         {location}, {country}
       </h3>
-      <p>Date Visited: {formattedDate}</p>
-      <p>Rating: {rating}/10</p>
 
       {/* action buttons */}
       <div className="actionBtns">
