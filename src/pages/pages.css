@@ -1,11 +1,11 @@
 /* Homepage CSS */
 .logList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   padding: 10px;
+  margin-left: 2em;
+  /* row-gap: 0px; */
 }
 .addBtnContainer {
   justify-self: center;
@@ -52,4 +52,25 @@
 .logDetail h2 {
   text-decoration: underline;
   border: 1px;
+}
+
+.favorites {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+.favoriteContainer {
+  display: inline-block;
+  /* inline-size: 5px; */
+}
+.btnContainerFav {
+  justify-self: center;
+}
+.btnContainerFav button {
+  height: 30px;
+  width: 60px;
+  border-radius: 10px;
+  border: none;
+  background-color: cadetblue;
 }

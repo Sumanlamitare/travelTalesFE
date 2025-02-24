@@ -1,5 +1,6 @@
 .navBar {
-  /* border: 3px solid rgba(0, 151, 178, 255); */
+  padding: 0;
+  border: none rgba(0, 151, 178, 255);
   display: flex;
   justify-content: space-between;
   height: 50px;

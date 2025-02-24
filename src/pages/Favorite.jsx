@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import LogCard from "../components/LogCard";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import "./pages.css";
 
 export default function Favorite() {
   const [data, setData] = useState(null);
@@ -20,14 +22,14 @@ export default function Favorite() {
     try {
       await axios.delete(`http://localhost:3000/logs/${log_id}`);
 
-      setLogs((prevLogs) => prevLogs.filter((log) => log.log_id !== log_id));
+      setData((prevLogs) => prevLogs.filter((log) => log.log_id !== log_id));
     } catch (err) {
       console.error(err);
     }
   }
   async function handleFavorite(log_id) {
     try {
-      const toUpdate = logs.find((log) => log.log_id === log_id);
+      const toUpdate = data.find((log) => log.log_id === log_id);
       if (!toUpdate) return;
 
       const isFavoriteStatus = !toUpdate.isFavorite;
@@ -36,7 +38,7 @@ export default function Favorite() {
         isFavorite: isFavoriteStatus,
       });
 
-      setLogs((prevLogs) =>
+      setData((prevLogs) =>
         prevLogs.map((log) =>
           log.log_id === log_id ? { ...log, isFavorite: isFavoriteStatus } : log
         )
@@ -53,15 +55,24 @@ export default function Favorite() {
   if (loading) return <h1>Loading.....</h1>;
 
   return (
-    <div className="favorites">
-      {data.map((log) => (
-        <LogCard
-          key={log.log_id}
-          log={log}
-          onDelete={handleDelete}
-          onFavorite={handleFavorite}
-        />
-      ))}
-    </div>
+    <>
+      <div className="favorites">
+        {data.map((log) => (
+          <LogCard
+            key={log.log_id}
+            log={log}
+            onDelete={handleDelete}
+            onFavorite={handleFavorite}
+          />
+        ))}
+      </div>
+      <br />
+      <br />
+      <div className="btnContainerFav">
+        <Link to={"/"}>
+          <button className="homeBtnFav">Home</button>
+        </Link>
+      </div>
+    </>
   );
 }
