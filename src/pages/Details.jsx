@@ -33,33 +33,42 @@ export default function Details() {
 
   return (
     <div className="logDetail">
-      <h1>
-        Place Visited:{" "}
-        <span>
-          {data.location}, {data.country}
-        </span>
-      </h1>
-      <h2>
-        Date of Visit: <span> {data.date_visited} </span>
-      </h2>
-      <h2
+      <h2>Place Visited:</h2>{" "}
+      <span>
+        {data.location}, {data.country}
+      </span>
+      <h2>Date of Visit:</h2>
+      <span> {data.date_visited} </span>
+      <h2>Rating:</h2>{" "}
+      <span
         className={`rating ${
           data.rating < 5 ? "low" : data.rating <= 7 ? "medium" : "high"
         }`}
       >
         {" "}
-        Rating:<span> {data.rating}/10 </span>
-      </h2>
-      <h2>
-        Is this on your favorite list:{" "}
-        <span>
-          {" "}
-          {data.isFavorite === true ? "Yes" : "Not on favorite list"}
-        </span>
-      </h2>
-      <h2>
-        Additional Detail:<span> {data.additional_comments} </span>
-      </h2>
+        {data.rating}/10{" "}
+      </span>
+      <h2>Status ? </h2>
+      <span>
+        {" "}
+        {data.isFavorite === true ? "⭐ Favorite" : "❌ Not Favorite"}
+      </span>
+      <h2>Additional Detail:</h2>
+      <span> {data.additional_comments} </span>
+      <h2>Log Created at:</h2>
+      <span>
+        {" "}
+        {new Date(data.createdAt).toDateString()} {" at "}
+        {new Date(data.createdAt).toLocaleTimeString()}{" "}
+      </span>
+      <h2>Last Update:</h2>
+      <span>
+        {" "}
+        {new Date(data.updatedAt).toDateString()} {" at "}
+        {new Date(data.updatedAt).toLocaleTimeString()}{" "}
+      </span>
+      <br />
+      <br />
       <button onClick={handleClick}>Home</button>
     </div>
   );
