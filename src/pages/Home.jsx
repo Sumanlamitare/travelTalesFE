@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import LogCard from "../components/LogCard";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [logs, setLogs] = useState([]);
@@ -65,6 +66,11 @@ export default function Home() {
             onFavorite={handleFavorite}
           />
         ))}
+      </div>
+      <div className="addBtnContainer">
+        <Link to={"/add"}>
+          <button id="addBtn">Add Logs</button>
+        </Link>
       </div>
     </div>
   );

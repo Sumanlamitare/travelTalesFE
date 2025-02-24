@@ -1,3 +1,24 @@
+/* Homepage CSS */
+.logList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 10px;
+  padding: 10px;
+}
+.addBtnContainer {
+  justify-self: center;
+  margin: 2em;
+}
+#addBtn {
+  background-color: green;
+  width: 85px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
 .low {
   color: red;
 }

@@ -63,12 +63,18 @@ input[type="checkbox"] {
   margin-left: 20em;
 }
 .logCard {
-  border: solid brown;
+  border: solid 2px none;
   width: 350px;
   background-color: aquamarine;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
+.logCard:hover {
+  background-image: url("https://cdn.dribbble.com/userupload/23022300/file/original-76681c2fcb11255dcbca143f73112691.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .actionBtns {
@@ -84,4 +90,6 @@ input[type="checkbox"] {
   height: 30px;
   /* width: fit-content; */
   margin: 1em;
+  border-radius: 10px;
+  border: none;
 }

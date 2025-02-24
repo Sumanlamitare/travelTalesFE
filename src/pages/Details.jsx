@@ -44,7 +44,7 @@ export default function Details() {
       </h2>
       <h2
         className={`rating ${
-          data.rating < 5 ? "low" : data.rating <= 7 ? "medium" : "High"
+          data.rating < 5 ? "low" : data.rating <= 7 ? "medium" : "high"
         }`}
       >
         {" "}
