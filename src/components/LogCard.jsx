@@ -29,18 +29,11 @@ export default function LogCard({ log, onDelete, onFavorite }) {
         <button
           id="delete"
           onClick={() => onDelete(log_id)}
-          style={{ backgroundColor: "#B22222" }}
+          //   style={{ backgroundColor: "#B22222" }}
         >
           Delete
         </button>
-        <button
-          id="favorite"
-          onClick={() => onFavorite(log_id)}
-          style={{
-            backgroundColor: isFavorite ? "red" : "lightGray",
-            color: "black",
-          }}
-        >
+        <button id="favorite" onClick={() => onFavorite(log_id)}>
           {isFavorite ? "Unfavorite" : "Favorite"}
         </button>
         <Link to={`/details/${log_id}`}>

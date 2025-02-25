@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 // import { handleAddLog } from "../pages/Add";
 import "./components.css";
 
@@ -12,6 +13,7 @@ export default function AddLogForm({ onAddLog }) {
     isFavorite: false,
     additional_comments: "",
   });
+  const nav = useNavigate();
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -27,6 +29,9 @@ export default function AddLogForm({ onAddLog }) {
         [name]: value || "NA",
       }));
     }
+  }
+  function handleCancel() {
+    nav("/");
   }
 
   function handleSubmit(e) {
@@ -65,7 +70,7 @@ export default function AddLogForm({ onAddLog }) {
           name="country"
           value={formData.country}
           onChange={handleChange}
-          placeholder="Enter the country here"
+          placeholder="Enter the country here. (No abbreviation)"
           required
         />
         <label htmlFor="dateVisited"> Date of Visit: </label>
@@ -105,6 +110,7 @@ export default function AddLogForm({ onAddLog }) {
           placeholder="Enter additional comments here (activities, places to go, etc.)"
         />
         <button type="submit">Add Log</button>
+        <button onClick={handleCancel}>Cancel</button>
       </form>
     </div>
   );

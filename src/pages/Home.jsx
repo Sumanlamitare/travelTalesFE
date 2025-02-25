@@ -2,10 +2,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import LogCard from "../components/LogCard";
 import { Link } from "react-router-dom";
+import Search from "../components/SearchBar";
 
 export default function Home() {
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   async function getLogs() {
     try {
@@ -57,21 +59,38 @@ export default function Home() {
     getLogs();
   }, []);
 
+  const filteredLogs = logs.filter(
+    (log) =>
+      log.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      log.country.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   if (loading) {
     return <div>Loading please wait.....</div>;
   }
 
   return (
     <div>
+      <div className="searchBar">
+        <Search
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        ></Search>
+      </div>
+
       <div className="logList">
-        {logs.map((log) => (
-          <LogCard
-            key={log.log_id}
-            log={log}
-            onDelete={handleDelete}
-            onFavorite={handleFavorite}
-          />
-        ))}
+        {filteredLogs.length > 0 ? (
+          filteredLogs.map((log) => (
+            <LogCard
+              key={log._id}
+              log={log}
+              onDelete={handleDelete}
+              onFavorite={handleFavorite}
+            />
+          ))
+        ) : (
+          <p>No logs found.</p>
+        )}
       </div>
       <div className="addBtnContainer">
         <Link to={"/add"}>

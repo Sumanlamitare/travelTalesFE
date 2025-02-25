@@ -6,6 +6,7 @@
   height: 50px;
   background-color: rgba(0, 151, 178, 255);
 }
+
 .links {
   margin-right: 10em;
   /* border: solid black; */
@@ -20,7 +21,7 @@
   /* border-radius: 50%; */
 }
 .formContainer {
-  border: solid red;
+  border: solid;
   border-radius: 10px;
   padding: 20px;
   width: 600px;
@@ -59,9 +60,10 @@ input[type="checkbox"] {
   width: 20px;
 }
 .addForm button {
-  height: 50px;
+  height: 45px;
   width: 80px;
   margin-left: 20em;
+  margin-bottom: 1em;
 }
 .logCard {
   border: solid 2px none;
@@ -71,6 +73,7 @@ input[type="checkbox"] {
   flex-direction: column;
   border-radius: 20px;
   text-align: center;
+  /* margin: 2em; */
 }
 .logCard:hover {
   background-image: url("https://cdn.dribbble.com/userupload/23022300/file/original-76681c2fcb11255dcbca143f73112691.gif");
@@ -93,4 +96,21 @@ input[type="checkbox"] {
   margin: 1em;
   border-radius: 10px;
   border: none;
+}
+
+.searchBar {
+  justify-self: center;
+  margin: 1em;
+}
+
+.searchBar input {
+  width: 300px;
+  border-radius: 15px;
+}
+.searchBar button {
+  margin: 1em;
+  border: none;
+  width: 80px;
+  height: 35px;
+  border-radius: 15px;
 }

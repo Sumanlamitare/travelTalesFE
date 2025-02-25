@@ -19,12 +19,18 @@ export default function Favorite() {
     }
   }
   async function handleDelete(log_id) {
-    try {
-      await axios.delete(`http://localhost:3000/logs/${log_id}`);
+    const resp = confirm("Are you sure you want to delete this log?");
 
-      setData((prevLogs) => prevLogs.filter((log) => log.log_id !== log_id));
-    } catch (err) {
-      console.error(err);
+    if (resp === true) {
+      try {
+        await axios.delete(`http://localhost:3000/logs/${log_id}`);
+
+        setLogs((prevLogs) => prevLogs.filter((log) => log.log_id !== log_id));
+      } catch (err) {
+        console.error(err);
+      }
+    } else {
+      return;
     }
   }
   async function handleFavorite(log_id) {
