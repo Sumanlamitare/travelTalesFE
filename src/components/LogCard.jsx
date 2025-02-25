@@ -12,11 +12,11 @@ export default function LogCard({ log, onDelete, onFavorite }) {
     additional_comment,
   } = log;
 
-  const formattedDate = date_visited
-    ? !isNaN(new Date(date_visited).getTime()) // Check if it's a valid date
-      ? new Date(date_visited).toISOString().split("T")[0]
-      : "Date not provided"
-    : "Date not available"; // Fallback message if no date is provided
+  //   const formattedDate = date_visited
+  //     ? !isNaN(new Date(date_visited).getTime()) // Check if it's a valid date
+  //       ? new Date(date_visited).toISOString().split("T")[0]
+  //       : "Date not provided"
+  //     : "Date not available"; // Fallback message if no date is provided
 
   return (
     <div className="logCard">
@@ -26,10 +26,21 @@ export default function LogCard({ log, onDelete, onFavorite }) {
 
       {/* action buttons */}
       <div className="actionBtns">
-        <button id="delete" onClick={() => onDelete(log_id)}>
+        <button
+          id="delete"
+          onClick={() => onDelete(log_id)}
+          style={{ backgroundColor: "#B22222" }}
+        >
           Delete
         </button>
-        <button id="favorite" onClick={() => onFavorite(log_id)}>
+        <button
+          id="favorite"
+          onClick={() => onFavorite(log_id)}
+          style={{
+            backgroundColor: isFavorite ? "red" : "lightGray",
+            color: "black",
+          }}
+        >
           {isFavorite ? "Unfavorite" : "Favorite"}
         </button>
         <Link to={`/details/${log_id}`}>

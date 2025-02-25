@@ -1,7 +1,9 @@
 import { useState } from "react";
+// import { handleAddLog } from "../pages/Add";
 import "./components.css";
 
-export default function AddLogForm({ onAdd }) {
+export default function AddLogForm({ onAddLog }) {
+  // console.log(onAddLog);
   const [formData, setFormData] = useState({
     location: "",
     country: "",
@@ -29,13 +31,19 @@ export default function AddLogForm({ onAdd }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onAdd({
-      ...formData,
-      date_visited: formData.date_visited || "NA",
-      additional_comments:
-        formData.additional_comments ||
-        "Additional detail not provided by the user",
-    });
+    console.log(typeof onAddLog);
+    if (typeof onAddLog === "function") {
+      onAddLog({
+        ...formData,
+        date_visited: formData.date_visited || "NA",
+        additional_comments:
+          formData.additional_comments ||
+          "Additional detail not provided by the user",
+      });
+    } else {
+      console.error("onAddLog is not a function");
+    }
+
     console.log(formData);
   }
 
