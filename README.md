@@ -59,13 +59,13 @@ The design incorporates a clean and simple interface to manage travel logs. The 
 - Add **user authentication** for personalized travel logs.
 - Implement **image uploads** for travel logs.
 - Enhance the UI with animations and more engaging styling.
-- Convert the frontend with react native to make it a mobile applocation.
+- Convert the frontend with react native to make it a mobile application.
 
 ## <a name="deployment"></a>Deployed Link
 
 [Deployed App on Netlify](https://yourapp.netlify.app)
 
-- You can view the repository:
+## You can view the repository:
 
 ## Front-End
 
@@ -74,5 +74,7 @@ The design incorporates a clean and simple interface to manage travel logs. The 
 ## Back-End
 
 [Github.com](https://github.com/Sumanlamitare/travelTalesBE)
+
+## Other Links
 
 [Developer LinkedIn](https://www.linkedin.com/in/sumanlamitare/)
