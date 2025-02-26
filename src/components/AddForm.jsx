@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // import { handleAddLog } from "../pages/Add";
 import "./components.css";
+import { fetchCountries } from "../utilities/FetchCountries";
 
 export default function AddLogForm({ onAddLog }) {
   // console.log(onAddLog);
+  const [countries, setCountries] = useState([]);
   const [formData, setFormData] = useState({
     location: "",
     country: "",
@@ -14,6 +16,14 @@ export default function AddLogForm({ onAddLog }) {
     additional_comments: "",
   });
   const nav = useNavigate();
+
+  useEffect(() => {
+    async function loadCountries() {
+      const countryList = await fetchCountries();
+      setCountries(countryList);
+    }
+    loadCountries();
+  }, []);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -26,7 +36,7 @@ export default function AddLogForm({ onAddLog }) {
     } else {
       setFormData((prev) => ({
         ...prev,
-        [name]: value || "NA",
+        [name]: value || "",
       }));
     }
   }
@@ -65,14 +75,20 @@ export default function AddLogForm({ onAddLog }) {
           required
         />
         <label htmlFor="country"> Country: </label>
-        <input
-          type="text"
+        <select
           name="country"
           value={formData.country}
           onChange={handleChange}
-          placeholder="Enter the country here. (No abbreviation)"
           required
-        />
+        >
+          <option value="">Select country</option>
+          {countries.map((country) => (
+            <option key={country.name} value={country.name}>
+              {country.name}
+            </option>
+          ))}
+        </select>
+
         <label htmlFor="dateVisited"> Date of Visit: </label>
         <input
           type="date"

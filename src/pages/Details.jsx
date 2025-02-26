@@ -120,10 +120,7 @@ export default function Details() {
         </button>
       </div>
 
-      <div
-        className="additionalDetails"
-        style={{ border: "solid red", padding: "10px" }}
-      >
+      <div className="additionalDetails" style={{ padding: "10px" }}>
         <h1>Additional Detail for {data.country}</h1>
         <img
           className="flag"

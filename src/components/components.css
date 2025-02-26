@@ -21,14 +21,16 @@
   /* border-radius: 50%; */
 }
 .formContainer {
-  border: solid;
+  border: none;
   border-radius: 10px;
   padding: 20px;
   width: 600px;
   margin: 1em;
   gap: 2px;
   justify-self: center;
+  background-color: green;
 }
+
 .addForm {
   display: flex;
   flex-direction: column;

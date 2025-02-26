@@ -19,7 +19,7 @@ export default function Add() {
       }
     } catch (error) {
       console.error(error);
-      alert("Failed to add log, Please try again");
+      alert(error.request.response);
     } finally {
       setLoading(false);
     }
@@ -27,7 +27,9 @@ export default function Add() {
 
   return (
     <div className="addFormContainer">
-      <h2>Add a New Travel Log</h2>
+      <h2 style={{ textAlign: "center", color: "green" }}>
+        Add a New Travel Log
+      </h2>
       <AddLogForm onAddLog={handleAddLog} />
       {loading && <p>Adding Log......</p>}
       {/* console.log("handle", typeof handleAddLog); */}
