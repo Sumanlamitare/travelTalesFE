@@ -126,7 +126,9 @@ export default function AddLogForm({ onAddLog }) {
           placeholder="Enter additional comments here (activities, places to go, etc.)"
         />
         <button type="submit">Add Log</button>
-        <button onClick={handleCancel}>Cancel</button>
+        <button type="button" onClick={handleCancel}>
+          Cancel
+        </button>
       </form>
     </div>
   );

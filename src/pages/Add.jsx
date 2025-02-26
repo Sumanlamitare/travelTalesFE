@@ -19,7 +19,7 @@ export default function Add() {
       }
     } catch (error) {
       console.error(error);
-      alert(error.request.response);
+      alert(error.response.data.error);
     } finally {
       setLoading(false);
     }

@@ -6,7 +6,10 @@ export default function Nav() {
   return (
     <div className="navBar">
       <div className="logo">
-        <img src={logo} alt="Logo" />
+        <Link to={"/"}>
+          {" "}
+          <img src={logo} alt="Logo" />
+        </Link>
       </div>
 
       <div className="links">
