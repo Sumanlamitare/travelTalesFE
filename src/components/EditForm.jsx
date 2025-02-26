@@ -4,18 +4,13 @@ import "./components.css";
 import { fetchCountries } from "../utilities/FetchCountries";
 
 export default function EditForm({ log, onEdit }) {
-  function formatDate(date) {
-    let [month, day, year] = date.split("-"); // Split the string by the dash
-
-    return `${year}-${month}-${day}`; // Return in YYYY-MM-DD format
-  }
   console.log(log.date_visited);
   const [countries, setCountries] = useState([]);
   const [formData, setFormData] = useState({
     log_id: log.log_id,
     location: log.location,
     country: log.country,
-    date_visited: log.date_visited ? formatDate(log.date_visited) : "",
+    date_visited: log.date_visited,
     rating: log.rating,
     isFavorite: log.isFavorite,
     additional_comments: log.additional_comments,

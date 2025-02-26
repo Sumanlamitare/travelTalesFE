@@ -52,12 +52,20 @@
   text-align: center;
   text-decoration: underline overline;
 }
+.btn {
+  justify-self: center;
+  align-self: flex-end;
+  margin-right: 3em;
+  padding: 10px;
+}
 .dbtn {
   margin-left: 13em;
   height: 35px;
-  width: 60px;
+  width: 70px;
   border-radius: 10px;
-  margin-top: 10px;
+  /* margin-top: 45em; */
+  /* margin-right: 5em; */
+  /* margin: 10em; */
   background-color: rgb(243, 171, 248);
 }
 .logDetail h2 {

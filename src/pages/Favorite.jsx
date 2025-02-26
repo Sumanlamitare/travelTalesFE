@@ -3,10 +3,12 @@ import LogCard from "../components/LogCard";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./pages.css";
+import Search from "../components/SearchBar";
 
 export default function Favorite() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   async function getFavorites() {
     try {
@@ -18,6 +20,7 @@ export default function Favorite() {
       console.error(error);
     }
   }
+
   async function handleDelete(log_id) {
     const resp = confirm("Are you sure you want to delete this log?");
 
@@ -58,19 +61,33 @@ export default function Favorite() {
     getFavorites();
   }, []);
 
+  const filteredLogs = data?.filter(
+    (log) =>
+      log.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      log.country.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   if (loading) return <h1>Loading.....</h1>;
 
   return (
     <>
+      <Search
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      ></Search>
       <div className="favorites">
-        {data.map((log) => (
-          <LogCard
-            key={log.log_id}
-            log={log}
-            onDelete={handleDelete}
-            onFavorite={handleFavorite}
-          />
-        ))}
+        {filteredLogs.length > 0 ? (
+          filteredLogs.map((log) => (
+            <LogCard
+              key={log._id}
+              log={log}
+              onDelete={handleDelete}
+              onFavorite={handleFavorite}
+            />
+          ))
+        ) : (
+          <p>No logs found.</p>
+        )}
       </div>
       <br />
       <br />

@@ -114,7 +114,8 @@ export default function Details() {
             </tr>
           </tbody>
         </table>
-        <br />
+      </div>
+      <div className="btn">
         <button className="dbtn" onClick={handleClick}>
           Home
         </button>
@@ -182,9 +183,9 @@ export default function Details() {
             </tr>
           </tbody>
         </table>
-        <button className="dbtn" onClick={handleClick}>
+        {/* <button className="dbtn" onClick={handleClick}>
           Home
-        </button>
+        </button> */}
       </div>
     </div>
   );
