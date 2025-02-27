@@ -10,7 +10,7 @@ export default function Search({ searchQuery, setSearchQuery }) {
     <div className="searchBar">
       <input
         type="text"
-        placeholder="Enter Location or Country to search Logs"
+        placeholder="Enter Location or Country to filter the Logs"
         value={searchQuery}
         onChange={handleChange}
       />

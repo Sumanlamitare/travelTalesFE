@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./components.css";
 import { fetchCountries } from "../utilities/FetchCountries";
 
+//function for edit form// reused addlog form to keep the styling consistent
+
 export default function EditForm({ log, onEdit }) {
-  console.log(log.date_visited);
   const [countries, setCountries] = useState([]);
   const [formData, setFormData] = useState({
     log_id: log.log_id,
@@ -38,6 +39,7 @@ export default function EditForm({ log, onEdit }) {
   function handleCancel() {
     nav("/");
   }
+  //Use state to fetch the countries for edit dropdown
 
   useEffect(() => {
     async function loadCountries() {

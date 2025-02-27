@@ -12,11 +12,7 @@ export default function LogCard({ log, onDelete, onFavorite }) {
     additional_comment,
   } = log;
 
-  //   const formattedDate = date_visited
-  //     ? !isNaN(new Date(date_visited).getTime()) // Check if it's a valid date
-  //       ? new Date(date_visited).toISOString().split("T")[0]
-  //       : "Date not provided"
-  //     : "Date not available"; // Fallback message if no date is provided
+  
 
   return (
     <div className="logCard">

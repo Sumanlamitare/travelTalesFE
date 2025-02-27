@@ -32,7 +32,6 @@ export default function Add() {
       </h2>
       <AddLogForm onAddLog={handleAddLog} />
       {loading && <p>Adding Log......</p>}
-      {/* console.log("handle", typeof handleAddLog); */}
     </div>
   );
 }

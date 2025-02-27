@@ -34,7 +34,6 @@ export default function Details() {
       );
       const result = await response.json();
       setDetail(result);
-      console.log(result);
     } catch (error) {
       console.error(error);
     } finally {
@@ -43,15 +42,11 @@ export default function Details() {
   }
   useEffect(() => {
     getLog();
-
-    // console.log(data);
   }, [log_id]);
   useEffect(() => {
     if (data?.country) {
-      console.log("in here", data.country);
       getAdditionalDetail(data.country);
     }
-    console.log("API DATA", detail);
   }, [data]);
 
   if (loading && detailLoad) return <h1>Loading please wait</h1>;

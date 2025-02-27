@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { handleAddLog } from "../pages/Add";
 import "./components.css";
 import { fetchCountries } from "../utilities/FetchCountries";
 
+//function for log form
 export default function AddLogForm({ onAddLog }) {
-  // console.log(onAddLog);
   const [countries, setCountries] = useState([]);
   const [formData, setFormData] = useState({
     location: "",
@@ -16,7 +15,7 @@ export default function AddLogForm({ onAddLog }) {
     additional_comments: "",
   });
   const nav = useNavigate();
-
+  //use effect to fetch the countries from the api for form drop down
   useEffect(() => {
     async function loadCountries() {
       const countryList = await fetchCountries();
@@ -46,7 +45,7 @@ export default function AddLogForm({ onAddLog }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(typeof onAddLog);
+
     if (typeof onAddLog === "function") {
       onAddLog({
         ...formData,
@@ -58,8 +57,6 @@ export default function AddLogForm({ onAddLog }) {
     } else {
       console.error("onAddLog is not a function");
     }
-
-    console.log(formData);
   }
 
   return (
