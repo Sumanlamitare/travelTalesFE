@@ -8,6 +8,11 @@
 <img src="./src/assets/Add.png" alt="Add Page"/>
 <img src="./src/assets/Edit.png" alt="Edit Page"/>
 
+## Installation Guide
+- Clone the repo - git clone(url)
+- Install dependencies - npm install
+- start the server - npm run dev (backend server needs to be running as well)
+
 ## Description
 
 Travel Log App allows users to log their travel experiences, mark places as favorites, and edit or delete entries. Built with the MERN stack, users can also view a list of their favorite places.
