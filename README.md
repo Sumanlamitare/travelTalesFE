@@ -40,17 +40,11 @@ Travel Log App allows users to log their travel experiences, mark places as favo
 - **View Favorites**: A separate page displays all of the user's favorite locations.
 - **Search Functionality**: Allows users to search for logs by location or country.
 
-## Wireframe Images
-
-- Description of image location, or <img src="path to wireframe images">
 
 ## <a name="design"></a>Design
 
 The design incorporates a clean and simple interface to manage travel logs. The use of CSS3 and React components ensures a smooth user experience.
 
-## ERD Images & DB Structure
-
-- Embedded ERD Images
 
 ## <a name="nextsteps"></a>Project Next Steps
 
@@ -61,9 +55,6 @@ The design incorporates a clean and simple interface to manage travel logs. The 
 - Enhance the UI with animations and more engaging styling.
 - Convert the frontend with react native to make it a mobile application.
 
-## <a name="deployment"></a>Deployed Link
-
-[Deployed App on Netlify](https://yourapp.netlify.app)
 
 ## You can view the repository:
 
